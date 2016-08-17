@@ -1,10 +1,6 @@
 # SA configuration storage
 
-----------
-
 [toc]
-
-----------
 
 ## INTRODUCUTION
 
