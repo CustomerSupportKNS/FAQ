@@ -1,10 +1,3 @@
-
-----------
-
-[TOC]
-
-----------
-
 # Start/Stop Windows services
 
 1. Navigate to: `[START]`>`Control Panel`>`All Control Panel Items`>`Administrative Tools`>`Services`:
@@ -21,9 +14,3 @@
 > Availability of the Windows service start/stop options is context sensitive (i.e.  `Start` is only available when the service is *not* yet running, while `Stop` / `Restart` are available when the service *is* running).
 
 > *Gracefully* shutting down Windows also results in shutting down all processes properly, as Windows sends its 'stop signal' to all of the running services as part of its shutdown procedure.
-
-# Start/Stop PLM
-
-PLM runs as a regular 'Windows service' called `Assembléon PLM` and can be started and stopped accordingly:
-
-![Assembléon PLM service](http://i.imgur.com/AEw75fJ.png)
