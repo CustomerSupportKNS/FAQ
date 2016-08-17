@@ -1,6 +1,14 @@
-# INTRODUCUTION
+# SA configuration storage
 
-## About this document
+----------
+
+[toc]
+
+----------
+
+## INTRODUCUTION
+
+### About this document
 
 This document describes how Setup Assistant stores its configuration settings. It can be used as reference material when *analysing* cases that are suspected to be configuration storage related.
 
@@ -10,15 +18,15 @@ This document describes how Setup Assistant stores its configuration settings. I
 
 > DISCLAIMER: The information in this document comes with ABSOLUTELY NO GUARANTEES, to the extent permitted by applicable law. The presented information is intended for learning purposes only! It's useage is to be limited to gaining academical / theoretical insights about Setup Assistant's configuration mechanisms! Any form of practical application without supervision of  a - case by case designated - member of the Setup Assistant's development team is prohibited and will have no support from Kulicke and Soffa®!
 
-## Storage file format
+### Storage file format
 
 Setup Assistant's configuration settings are stored in a "database" storage file: `C:\Program Files\assembleon\SetupAssistant X.xxx.xxx\config\configuration.xml`. It is a plain textfile containing a context sensitive hierachal model of all possible settings using the [eXtensible Markup Language (XML)](https://en.wikipedia.org/wiki/XML#Applications_of_XML) and is therefore *technically* both machine and human readable.
 
 It is designed as a virtually infinitely (!) flexible configuration *storage*. Every thinkable setting combination can be stored in it.  Therefore; albeit *technically* human readable, and build by seemingly simple separate "building blocks" (XML elements and attributes), its interpretation is fairly complex *in practice* requiring elaborate understanding. This is in contrast to using SA's GUI; where having only a general notion of what each system level configuration label means (described in the manual) is enough to be able to understand and configure SA correctly.
 
-## Editing
+### Editing
 
-### Via the GUI
+#### Via the GUI
 
 Setup Assistant (SA) is configured by using the configuration tab from its Graphical User Interface ([GUI](https://en.wikipedia.org/wiki/Graphical_user_interface)). It is a relatively intuitive and safe way for "naive" system users to configure SA's features and make it behave according to the local way of working. Simply checking a checkbox, choosing an option from a list-box, or toggling a radio-button representing a system function, will result in SA storing *all* the corresponding settings correctly in the form of smart *presets* (i.e. configuration setting *combinations*) that are tested to work correctly.
 
@@ -33,7 +41,7 @@ When a diagnostic dump is provided along with this information; SA's development
 
 > Manual ad hoc configuration.xml edits should be considered temporary workarounds and not without risk! E.g. such edits do not persist clean installs (updates should be fine though), nor are they guaranteed to keep working over time (especially when software changes occur).*
 
-### Directly
+#### Directly
 
 Manually editing the storage file in an ad hoc fashion, or 'hacking' if you will, is deemed to be too complex and risky for unguided field application! The rationale for this is (at least) fourfold:
 
@@ -46,29 +54,35 @@ In the same vein; ‘a priori’ describing what all is possible using the setti
 
 > 'Configuration.xml results' are related to its separate 'settings', as to 'stories' are to its separate 'letters': *It is easy to change a story (the result of a configuration.xml) using a limited set of letters (the settings). But it is deemed impossible to describe all stories that can be made by using that very same letter set!*
 
-# PARAMETER CONCEPTS
+## PARAMETER CONCEPTS
 
-## Jobs
+### Jobs
+
+#### Description
+
+Jobs are top-level configuration.xml [elements](https://en.wikipedia.org/wiki/XML#Applications_of_XML) in SA's configuration storage file that represent all actions that SA's users can perform (e.g. the buttons in SA's GUI and/or the corresponding options on a scanner's UI).
+
+#### Example
     <Job presentationSequence="100" class="com.assembleon.saJobs.XxxxxXxxxx" name="XxxxxXxxxx">
       <Lite onTrue="XXXXX" onFalse="XXXXX"/>
       <OnLoadingUnit onTrue="XXXXX" onFalse="XXXXX"/>
     </Job>
-Jobs are top-level configuration.xml [elements](https://en.wikipedia.org/wiki/XML#Applications_of_XML) in SA's configuration storage file that represent all actions that SA's users can perform (e.g. the buttons in SA's GUI and/or the corresponding options on a scanner's UI).
 
-### Attributes
 
-### RepresentationSequence
+#### Attributes
+
+#### RepresentationSequence
 A job's configuration.xml element's `RepresentationSequence` *attribute* determines its presentation priority on the various user interfaces. I.e. a job with a higher priority attribute will have its button located higher in the GUI list and/or be presented sooner when cycling through a job-list on the scanners' displays than a job with a lower `RepresentatioPriority` level attributed.
 
-### Job child elements
+#### Job child elements
 Similar to Verifier elements.
 
-## Verifiers
+### Verifiers
 `<Verifier name="XxxxxXxxxx..." class="XxxxxXxxxx...Verifier">`
 
 Verifiers are top-level configuration.xml elements in SA's configuration storage file that represent the requirements that SA checks with each verification round. When actual reality is determined not to meet the specific requirement during its verification; an alarm will be raised. Such alarms can have various severity levels; being: 'ERROR', 'WARNING' or 'OFF'. Which seveirty level should be used for verification is configured (for various contexts) by means of the various specific verifier 'child elements'.
 
-### Verifier child elements
+#### Verifier child elements
 `<IsXxxxx onTrue="xxxxx" onFalse="xxxxx"/>`
 
 Verifier configuration.xml elements typically have configuration.xml elements embedded of their own (xml being a [hierarchical storage standard](https://en.wikipedia.org/wiki/XML)). Such sub-elements are called 'verifier child elements'. They determine the alarm severity levels to be used by the verifiers containing them, when verification turns out negative in the various contexts.
@@ -79,11 +93,11 @@ Severity levels are effectuated by having filling out the child elements' *attri
 
 More concrete examples will be described in the next section of this document.
 
-# PARAMETERS
+## PARAMETERS
 
-## Applied configuration.xml edits
+### Applied configuration.xml edits
 
-### IsRequired?
+#### IsRequired?
 `<IsRequired onTrue="xxxxx" onFalse="xxxxx"/>`
 
 The sub-element `IsRequired` enables verification result severity level configuration based on whether the verification target is present on a position in the required setup from the loaded program; `onTrue="xxxxx"`, or not: `onFalse="xxx"`.
@@ -102,8 +116,4 @@ The sub-element `IsRequired` enables verification result severity level configur
 Subsequently setting its attribute `onFalse="OFF"` would make SA ignore that verifier when its fulfillment is position is *not* in the required setup (IsRequired onFalse); *no* alarm will be raised (OFF).
 - Setting its attribute `onFalse="WARNING"`: when a position is *not* in the required setup (IsRequired onFalse); a *warning* will be raised (WARNING), or not (depending on the family setup strictness).
 
-### Manipulation:
-
-
-
-----------
+#### Manipulation:
