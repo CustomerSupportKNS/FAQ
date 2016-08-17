@@ -1,2 +1,2 @@
 # FAQ
-A Frequently Asked Questions (and aswers!) repository.
+A Frequently Asked Questions (and answers!) repository.
