@@ -1,15 +1,9 @@
 # Start/Stop Windows services
 
-1. Navigate to: `[START]`>`Control Panel`>`All Control Panel Items`>`Administrative Tools`>`Services`:
-
- Alternatively (Win7): `[Start]` > `"Services.msc"`:
+![Assembléon PLM service](http://i.imgur.com/XgjaHYv.png)
  
- Alternatively (WinXP): `[Start]`>`run`>`"Services.msc"`:
- 
- ![Assembléon PLM service](http://i.imgur.com/XgjaHYv.png)
- 
-2. Select: the target service (e.g. `Windows Firewall`) from the list.
-3. Click: `Start` or `Stop` / `Restart` in the top left corner of the `Services (Local)` pane.
+1. Select: the target service (e.g. `Windows Firewall`) from the list.
+2. Click: `Start` or `Stop` / `Restart` in the top left corner of the `Services (Local)` pane.
 
 > Availability of the Windows service start/stop options is context sensitive (i.e.  `Start` is only available when the service is *not* yet running, while `Stop` / `Restart` are available when the service *is* running).
 
