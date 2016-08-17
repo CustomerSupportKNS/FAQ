@@ -107,5 +107,5 @@ The sub-element `IsRequired` enables verification result severity level configur
       <IsEnabled onTrue="ERROR" onFalse="OFF"/>
     </Verifier>
 
-Subsequently setting its attribute `onFalse="OFF"` would make SA ignore that verifier when its fulfillment is position is *not* in the required setup (IsRequired onFalse); *no* alarm will be raised (OFF).
+- Subsequently setting its attribute `onFalse="OFF"` would make SA ignore that verifier when its fulfillment is position is *not* in the required setup (IsRequired onFalse); *no* alarm will be raised (OFF).
 - Setting its attribute `onFalse="WARNING"`: when a position is *not* in the required setup (IsRequired onFalse); a *warning* will be raised (WARNING), or not (depending on the family setup strictness).
