@@ -1,6 +1,6 @@
 [toc]
 
-# INTRODUCUTION
+# INTRODUCTION
 
 ## About this document
 
