@@ -1,6 +1,8 @@
-Navigate to: `[START]`>`Control Panel`>`All Control Panel Items`>`Administrative Tools`>`Services`.
+# Mouse click navigation
 
-Alternatively:
+`[START]`>`Control Panel`>`All Control Panel Items`>`Administrative Tools`>`Services`.
+
+# Search / run "commandline"
 
 - Win7: `[Start]` > `"Services.msc"`:
 - WinXP: `[Start]`>`run`>`"Services.msc"`:
