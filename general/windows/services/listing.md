@@ -1,4 +1,4 @@
-# List services (Windows)
+# List services on Windows
 
 ## Mouse navigation (clicking)
 
