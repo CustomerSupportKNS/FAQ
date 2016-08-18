@@ -1,4 +1,4 @@
-1. [Navigate to the Windows services list](open_windows-services-list.md):
+1. [Navigate to the Windows services list](listing.md):
 
  ![Assembléon PLM service](http://i.imgur.com/XgjaHYv.png)
  
