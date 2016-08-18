@@ -1,8 +1,10 @@
-# Mouse navigation (clicking)
+# List services (Windows)
+
+## Mouse navigation (clicking)
 
 `[START]`>`Control Panel`>`All Control Panel Items`>`Administrative Tools`>`Services`.
 
-# Search / run (typing)
+## Search / run (typing)
 
 - Win7: `[Start]` > `"Services.msc"`:
 - WinXP: `[Start]`>`run`>`"Services.msc"`:
