@@ -1,6 +1,6 @@
-1. [Navigate to the Windows services list](open_windows-services-list.md):
+1. [Navigate to the Windows services list](listing.md):
 
- ![Assembléon PLM service](http://i.imgur.com/XgjaHYv.png)
+ ![Assembléon PLM service](images/stopRestart.png)
  
 2. Select: the target service (e.g. `Windows Firewall`) from the list.
 3. Click: `Start` or* `Stop`/`Restart` in the top left corner of the `Services (Local)` pane.
