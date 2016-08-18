@@ -1,3 +1,3 @@
-PLM runs as a regular 'Windows service' called `Assembléon PLM`. It can therefore be [started and stopped/restarted accordingly](../general/windows/services/startStopRestart-windowsServices.md):
+PLM runs as a regular 'Windows service' called `Assembléon PLM`. It can therefore be [started and stopped/restarted accordingly](../general/windows/services/startStopRestart.md):
 
-![Stop-Restart Assembléon PLM service](mages/stopRestart.png)
+![Stop-Restart Assembléon PLM service](images/stopRestart.png)
